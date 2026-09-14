@@ -29,6 +29,7 @@ while (addItem.toUpperCase() === "Y") {
 console.log(`Total items: ${receiptItems.length}`);
 console.log(receiptItems);
 
+// Calculate the original subtotal
 let subtotal = 0;
 
 for (const item of receiptItems) {
@@ -38,3 +39,47 @@ for (const item of receiptItems) {
 }
 
 console.log(`Food subtotal: $${subtotal.toFixed(2)}`);
+
+// Remove the last item
+if (receiptItems.length > 0) {
+    const removedItem = receiptItems.pop();
+
+    console.log(`Removed item: ${removedItem.name}`);
+}
+
+// Recalculate the subtotal after removing the item
+subtotal = 0;
+
+for (const item of receiptItems) {
+    subtotal += item.price;
+}
+
+// Add the table fee
+const grossSubtotal = subtotal + storeInfo.tableFee;
+
+// Calculate the tax
+const taxAmount = grossSubtotal * (storeInfo.taxRate / 100);
+
+// Calculate the grand total
+const grandTotal = grossSubtotal + taxAmount;
+
+// Print the final receipt
+console.log("");
+console.log("========== FINAL RECEIPT ==========");
+
+console.log(`Store: ${storeInfo.name}`);
+
+console.log("");
+
+for (const item of receiptItems) {
+    console.log(`${item.name} -- $${item.price.toFixed(2)}`);
+}
+
+console.log("");
+
+console.log(`Table Fee: $${storeInfo.tableFee.toFixed(2)}`);
+console.log(`Subtotal: $${grossSubtotal.toFixed(2)}`);
+console.log(`Tax: $${taxAmount.toFixed(2)}`);
+console.log(`Grand Total: $${grandTotal.toFixed(2)}`);
+
+console.log("==================================");
