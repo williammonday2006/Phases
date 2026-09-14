@@ -11,3 +11,6 @@ const item = {
 item.price = 10;
 
 The object would then contain both name and price.
+
+# Phase 3
+I used a for...of loop to go through each object stored in reciptitems array, The variable item represents the current object during each iteration of the loop. To access the price i used item.price then added that value to subtotal while also displaying its name.

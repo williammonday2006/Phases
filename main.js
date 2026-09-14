@@ -28,3 +28,13 @@ while (addItem.toUpperCase() === "Y") {
 
 console.log(`Total items: ${receiptItems.length}`);
 console.log(receiptItems);
+
+let subtotal = 0;
+
+for (const item of receiptItems) {
+    console.log(`${item.name} -- $${item.price.toFixed(2)}`);
+
+    subtotal += item.price;
+}
+
+console.log(`Food subtotal: $${subtotal.toFixed(2)}`);
