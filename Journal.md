@@ -1,0 +1,1 @@
+I used storeInfo object to group the restrant name, tax rate, and table fee together. This makes the code easier to orgonize as its all in one place. If i used different variables i would have to keep track of storeName taxRate and tableFee individually.
